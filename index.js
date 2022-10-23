@@ -1,22 +1,71 @@
-$("button").click(() => {
-  $("#blueBg").animate({ left: "0" });
-  $("#redBg").animate({ right: "0" });
+let z;
+let myTimeout;
+let bot;
+let clicked = false;
+
+$("button").on("click", () => {
+  setTimeout(() => {
+    $("#blueBg").animate({ left: "0" });
+    $("#redBg").animate({ right: "0" });
+    if (clicked != true) {
+      botChoice();
+    }
+  }, 1000);
+
+  startGame();
 });
 
-$("#rockButton").mouseover(() => {
-  $("#leftHand").removeAttr("class");
-  $("#leftHand").addClass("rockLeft");
-  $("#leftHand").animate({ left: "0" });
+$("#rockButton").on("mouseover", () => {
+  if (clicked != true) {
+    z = "rockLeft";
+  }
 });
 
-$("#paperButton").mouseover(() => {
-  $("#leftHand").removeAttr("class");
-  $("#leftHand").addClass("paperLeft");
-  $("#leftHand").animate({ left: "0" });
+$("#paperButton").on("mouseover", () => {
+  if (clicked != true) {
+    z = "paperLeft";
+  }
 });
 
-$("#scissorsButton").mouseover(() => {
-  $("#leftHand").removeAttr("class");
-  $("#leftHand").addClass("scissorsLeft");
-  $("#leftHand").animate({ left: "0" });
+$("#scissorsButton").on("mouseover", () => {
+  if (clicked != true) {
+    z = "scissorsLeft";
+  }
 });
+
+$("button").on("mouseover", () => {
+  $("#leftHand").removeAttr("class");
+  $("#leftHand").addClass(z);
+  $("#leftHand").animate({ left: "0" });
+  clearTimeout(myTimeout);
+});
+
+$("button").on("mouseleave", () => {
+  clearTimeout(myTimeout);
+  if (clicked != true) {
+    myTimeout = setTimeout(() => {
+      $("#leftHand").animate({ left: "-100%" });
+    }, 2000);
+  }
+});
+
+function botChoice() {
+  clicked = true;
+  bot = Math.floor(Math.random() * 3);
+  $("#rightHand").removeAttr("class");
+  if (bot === 0) {
+    $("#rightHand").addClass("rockRight");
+  } else if (bot === 1) {
+    $("#rightHand").addClass("paperRight");
+  } else if (bot === 2) {
+    $("#rightHand").addClass("scissorsRight");
+  }
+  $("#rightHand").animate({ right: "0" });
+}
+
+function startGame() {
+  $("#leftHand").animate({ left: "-100%" });
+  setTimeout(() => {
+    $("#leftHand").animate({ left: "0" });
+  }, 1000);
+}
