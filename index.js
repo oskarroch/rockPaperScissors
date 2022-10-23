@@ -7,10 +7,10 @@ $("button").on("click", () => {
   setTimeout(() => {
     $("#blueBg").animate({ left: "0" });
     $("#redBg").animate({ right: "0" });
-    if (clicked != true) {
-      botChoice();
-    }
   }, 1000);
+  if (clicked != true) {
+    botChoice();
+  }
 
   startGame();
 });
@@ -51,16 +51,18 @@ $("button").on("mouseleave", () => {
 
 function botChoice() {
   clicked = true;
-  bot = Math.floor(Math.random() * 3);
-  $("#rightHand").removeAttr("class");
-  if (bot === 0) {
-    $("#rightHand").addClass("rockRight");
-  } else if (bot === 1) {
-    $("#rightHand").addClass("paperRight");
-  } else if (bot === 2) {
-    $("#rightHand").addClass("scissorsRight");
-  }
-  $("#rightHand").animate({ right: "0" });
+  setTimeout(() => {
+    bot = Math.floor(Math.random() * 3);
+    $("#rightHand").removeAttr("class");
+    if (bot === 0) {
+      $("#rightHand").addClass("rockRight");
+    } else if (bot === 1) {
+      $("#rightHand").addClass("paperRight");
+    } else if (bot === 2) {
+      $("#rightHand").addClass("scissorsRight");
+    }
+    $("#rightHand").animate({ right: "0" });
+  }, 1000);
 }
 
 function startGame() {
