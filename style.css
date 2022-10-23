@@ -1,0 +1,135 @@
+body {
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+#wrapper {
+  background-image: url("img/elementy/background.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  margin: 0 auto;
+  height: 100vh;
+  width: 100%;
+}
+
+#blueBg,
+#redBg {
+  position: absolute;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+}
+
+#blueBg {
+  background-image: url("img/elementy/blue.svg");
+  left: -100%;
+}
+
+#redBg {
+  background-image: url("img/elementy/red.svg");
+  right: -100%;
+}
+
+#window {
+  position: absolute;
+  background-image: url("img/Button/window.svg");
+  background-repeat: no-repeat;
+  aspect-ratio: 3/1;
+  width: 25%;
+  left: 25%;
+  bottom: 5%;
+  min-width: 350px;
+}
+
+#rockButton,
+#paperButton,
+#scissorsButton {
+  background: transparent;
+  background-repeat: no-repeat;
+  border: 0;
+  height: 65%;
+  aspect-ratio: 1 / 1;
+}
+
+#rockButton {
+  background-image: url("img/Button/stoneBlack.svg");
+  margin-left: 10%;
+  margin-top: 8%;
+}
+
+#rockButton:hover {
+  background-image: url("img/Button/stoneWhite.svg");
+}
+
+#paperButton {
+  background-image: url("img/Button/paperBlack.svg");
+  margin: 0 auto;
+  margin-top: 5%;
+  margin-right: 8%;
+  float: right;
+}
+
+#paperButton:hover {
+  background-image: url("img/Button/paperWhite.svg");
+}
+
+#scissorsButton {
+  background-image: url("img/Button/scissorsBlack.svg");
+  float: right;
+  margin-right: 10%;
+  margin-top: 8%;
+}
+
+#scissorsButton:hover {
+  background-image: url("img/Button/scissorsWhite.svg");
+}
+
+#leftHand,
+#rightHand {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#leftHand {
+  left: -100%;
+  background-position: 10%;
+}
+
+#rightHand {
+  right: -100%;
+  background-position: right;
+}
+
+.rockLeft {
+  background-image: url("img/finalHand/RockLeft.svg");
+}
+
+.paperLeft {
+  background-image: url("img/finalHand/PaperLeft.svg");
+}
+
+.scissorsLeft {
+  background-image: url("img/finalHand/ScissorsLeft.svg");
+}
+
+.rockRight {
+  background-image: url("img/finalHand/RockRight.svg");
+}
+
+.paperRight {
+  background-image: url("img/finalHand/PaperRight.svg");
+}
+
+.scissorsRight {
+  background-image: url("img/finalHand/ScissorsRight.svg");
+}
