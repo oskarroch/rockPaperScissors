@@ -78,7 +78,7 @@ function newGame() {
     $("#redBg").animate({ right: "-100%" });
     $("#leftHand").animate({ left: "-100%" });
     $("#rightHand").animate({ right: "-100%" });
-  }, 4000);
+  }, 2000);
 }
 
 function winner() {
